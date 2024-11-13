@@ -1,12 +1,9 @@
 name: Generate and Deploy Documentation
 
 on:
-  pull_request:
-    types: [closed]
-  workflow_run:
-    workflows: [Java CI with Maven - Test and package]
+  pull_request_target:
     types:
-      - completed
+      - closed
 
 jobs:
   deploy-docs:
