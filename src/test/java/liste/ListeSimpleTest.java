@@ -361,4 +361,29 @@ class ListeSimpleTest {
         Noeud courant = listeATester.tete.getSuivant();
         assertNotEquals(2, courant.getElement());
     }
+
+    @Test
+    void modifierElementCourant() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        Noeud courant = listeATester.tete.getSuivant();
+        assertNotNull(courant);
+        courant.setElement(4);
+        assertEquals(4, courant.getElement());
+        assertEquals("ListeSimple(Noeud(2), Noeud(4))", listeATester.toString());
+    }
+
+    @Test
+    void modifierElementPrecedentEtCourant() {
+        listeATester.ajout(1);
+        listeATester.ajout(2);
+        Noeud precedent = listeATester.tete;
+        Noeud courant = listeATester.tete.getSuivant();
+        assertNotNull(courant);
+        precedent.setElement(1);
+        courant.setElement(2);
+        assertEquals(2, courant.getElement());
+        assertEquals(1, precedent.getElement());
+        assertEquals("ListeSimple(Noeud(1), Noeud(2))", listeATester.toString());
+    }
 }
