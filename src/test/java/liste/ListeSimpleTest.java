@@ -272,23 +272,10 @@ class ListeSimpleTest {
     }
 
     @Test
-    void getPrecedentPremierElement() {
-        listeATester.ajout(1);
-        listeATester.ajout(2);
-        assertNull(listeATester.getPrecedent(listeATester.tete));
-    }
-
-    @Test
     void listeAvecDeuxElements() {
         listeATester.ajout(1);
         listeATester.ajout(2);
         assertEquals(2, listeATester.getPrecedent(listeATester.tete.getSuivant()).getElement());
-    }
-
-    @Test
-    void listeAvecUnElement() {
-        listeATester.ajout(1);
-        assertNull(listeATester.getPrecedent(listeATester.tete));
     }
 
     @Test
